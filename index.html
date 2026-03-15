@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高野直樹 自己紹介｜ポータル</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen font-sans">
+  <div class="max-w-3xl mx-auto px-5 py-16">
+    <header class="text-center mb-12">
+      <h1 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">高野直樹 自己紹介</h1>
+    </header>
+
+    <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+      <a href="self-intro_base.html" class="group flex flex-col items-center p-6 md:p-8 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-200 text-center">
+        <span class="flex items-center justify-center w-14 h-14 rounded-xl bg-blue-500/10 text-blue-600 mb-4 group-hover:bg-blue-500/20 transition-colors">
+          <i data-lucide="layout" class="w-7 h-7"></i>
+        </span>
+        <span class="font-bold text-slate-900">元</span>
+        <span class="text-xs text-slate-500 mt-1"></span>
+      </a>
+
+      <a href="self-intro_gemini1.html" class="group flex flex-col items-center p-6 md:p-8 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-cyan-200 transition-all duration-200 text-center">
+        <span class="flex items-center justify-center w-14 h-14 rounded-xl bg-cyan-500/10 text-cyan-600 mb-4 group-hover:bg-cyan-500/20 transition-colors">
+          <i data-lucide="user-circle" class="w-7 h-7"></i>
+        </span>
+        <span class="font-bold text-slate-900">normal design</span>
+        <span class="text-xs text-slate-500 mt-1"></span>
+      </a>
+
+      <a href="self-intro_gemini2.html" class="group flex flex-col items-center p-6 md:p-8 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-200 text-center">
+        <span class="flex items-center justify-center w-14 h-14 rounded-xl bg-amber-500/10 text-amber-600 mb-4 group-hover:bg-amber-500/20 transition-colors">
+          <i data-lucide="sparkles" class="w-7 h-7"></i>
+        </span>
+        <span class="font-bold text-slate-900">Solid design</span>
+        <span class="text-xs text-slate-500 mt-1"></span>
+      </a>
+
+      <a href="self-intro_cyberagent.html" class="group flex flex-col items-center p-6 md:p-8 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-green-200 transition-all duration-200 text-center">
+        <span class="flex items-center justify-center w-14 h-14 rounded-xl bg-green-500/10 text-green-600 mb-4 group-hover:bg-green-500/20 transition-colors">
+          <i data-lucide="building-2" class="w-7 h-7"></i>
+        </span>
+        <span class="font-bold text-slate-900">CyberAgent</span>
+        <span class="text-xs text-slate-500 mt-1"></span>
+      </a>
+
+      <a href="self-intro_game.html" class="group flex flex-col items-center p-6 md:p-8 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-violet-200 transition-all duration-200 text-center">
+        <span class="flex items-center justify-center w-14 h-14 rounded-xl bg-violet-500/10 text-violet-600 mb-4 group-hover:bg-violet-500/20 transition-colors">
+          <i data-lucide="gamepad-2" class="w-7 h-7"></i>
+        </span>
+        <span class="font-bold text-slate-900">Invader</span>
+        <span class="text-xs text-slate-500 mt-1"></span>
+      </a>
+    </nav>
+
+    <footer class="mt-12 text-center">
+      <p class="text-xs text-slate-400">AI-Driven School の図解ツールで作成</p>
+    </footer>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

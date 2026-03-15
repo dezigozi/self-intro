@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高野直樹 - Self Introduction | CyberAgent Style</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ca-green: #00a040;
+      --ca-red: #e60012;
+      --ca-blue: #1e40af;
+      --ca-orange: #ea580c;
+      --ca-gray: #374151;
+    }
+    body { font-family: 'Noto Sans JP', sans-serif; }
+    .ca-section-row {
+      display: grid;
+      grid-template-columns: minmax(140px, 200px) 1fr;
+      border-bottom: 1px solid #e5e7eb;
+      min-height: 120px;
+    }
+    @media (max-width: 640px) {
+      .ca-section-row { grid-template-columns: 1fr; }
+      .ca-section-title { padding: 1rem !important; }
+    }
+    .ca-section-title {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 1.25rem;
+      color: #fff;
+      font-weight: 900;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+    .ca-badge-up { background: var(--ca-red); color: #fff; padding: 0.2rem 0.5rem; border-radius: 9999px; font-size: 0.7rem; font-weight: 700; }
+    .ca-badge-down { background: #6b7280; color: #fff; padding: 0.2rem 0.5rem; border-radius: 9999px; font-size: 0.7rem; font-weight: 700; }
+    .ca-tag { background: var(--ca-red); color: #fff; padding: 0.15rem 0.4rem; font-size: 0.65rem; font-weight: 700; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+  <!-- Header -->
+  <header class="border-b border-slate-200 px-6 py-4 md:px-10">
+    <h1 class="text-xl md:text-2xl font-black text-slate-900">1. 自己紹介</h1>
+    <p class="text-sm text-slate-500 mt-0.5">高野直樹 / 自動車電装営業・埼玉在住</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto">
+
+    <!-- Hero block: name + one-liner -->
+    <div class="ca-section-row">
+      <div class="ca-section-title bg-[var(--ca-green)]">プロフィール概要</div>
+      <div class="p-6 flex flex-wrap items-center gap-6">
+        <div>
+          <p class="text-slate-700 leading-relaxed mb-4">自動車電装の<strong class="text-slate-900">営業</strong>・埼玉在住の一児の父。新卒から今の会社一筋で、電装部品の卸売販売を手がけています。</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="ca-badge-up">出身</span>
+            <span class="text-sm font-bold">東京・豊島区</span>
+            <span class="text-slate-300">|</span>
+            <span class="ca-badge-up">現在</span>
+            <span class="text-sm font-bold">埼玉在住</span>
+            <span class="text-slate-300">|</span>
+            <span class="ca-badge-up">家族</span>
+            <span class="text-sm font-bold">9歳の娘の父</span>
+            <span class="text-slate-300">|</span>
+            <span class="ca-badge-up">仕事</span>
+            <span class="text-sm font-bold">電装部品営業</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 人物紹介 -->
+    <div class="ca-section-row">
+      <div class="ca-section-title bg-[var(--ca-green)]">人物紹介</div>
+      <div class="p-6">
+        <p class="text-slate-700 leading-relaxed mb-3">新卒から今の会社一筋で働いています。国内の会社に自動車の電装部品の卸売販売をしていて、営業部門に所属しています。</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded text-sm font-medium">#新卒から一筋</span>
+          <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded text-sm font-medium">#電装部品の卸売</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 就職までのストーリー -->
+    <div class="ca-section-row">
+      <div class="ca-section-title bg-[var(--ca-blue)]">就職までのストーリー</div>
+      <div class="p-6">
+        <p class="text-slate-700 leading-relaxed mb-4">実はプロミュージシャンを目指して活動をしていました。兄の背中を追いかけて後一歩のところまで行きましたが、力不足や様々な要因が重なり断念。その後、元々興味があった車の世界へ飛び込み、今の会社に出会いました。</p>
+        <div class="flex flex-wrap items-center gap-3 text-sm">
+          <span class="font-bold text-slate-800">Music</span>
+          <span class="text-slate-400">→</span>
+          <span class="font-bold text-slate-800">Car</span>
+          <span class="text-slate-400">→</span>
+          <span class="ca-tag">Present</span>
+          <span class="font-bold text-slate-800">現在のキャリアへ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 電装業界とは -->
+    <div class="ca-section-row">
+      <div class="ca-section-title bg-[var(--ca-orange)]">電装業界とは</div>
+      <div class="p-6">
+        <p class="text-slate-700 leading-relaxed">カーナビ、ドラレコからトヨタOEM商品の製造まで。電気に関わる商品はすべて対象となる、非常にニッチな世界です。</p>
+      </div>
+    </div>
+
+    <!-- 業界の課題 -->
+    <div class="ca-section-row">
+      <div class="ca-section-title bg-[var(--ca-gray)]">業界の課題</div>
+      <div class="p-6">
+        <p class="text-slate-700 leading-relaxed">いまだにFAXが主流というアナログな風土。DXとは程遠い環境が、若者の離職や人材不足を加速させています。</p>
+      </div>
+    </div>
+
+    <!-- AIスクールで目指す未来 -->
+    <div class="ca-section-row">
+      <div class="ca-section-title bg-[var(--ca-green)]">AIスクールで目指す未来</div>
+      <div class="p-6">
+        <p class="text-slate-700 leading-relaxed mb-4">AIの活用に抵抗があるこの業界に「風穴」を開けたい。効率化によって人材不足を解消し、次世代が働きやすい環境を作ることが私の使命です。</p>
+        <div class="flex flex-wrap gap-3 text-sm">
+          <span class="ca-badge-up">AIによる効率化</span>
+          <span class="text-slate-600">アナログな慣習を打破し、最先端の技術を導入</span>
+          <span class="text-slate-300">|</span>
+          <span class="ca-badge-up">人材不足の解消</span>
+          <span class="text-slate-600">労働負荷を軽減し、魅力的な業界へ</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Red banner footer (CA style) -->
+  <footer class="mt-0">
+    <div class="bg-[var(--ca-red)] text-white text-center py-6 px-6">
+      <p class="text-xl md:text-2xl font-black">どうぞよろしくお願いします！</p>
+    </div>
+    <div class="bg-slate-50 py-4 text-center text-slate-500 text-xs">
+      <p>© 2026 NAOKI TAKANO / AI-Driven School</p>
+      <p class="mt-2"><a href="index.html" class="text-[var(--ca-green)] hover:underline font-medium">ポータルに戻る</a>　|　<a href="https://diagram-self-intro.surge.sh" class="text-[var(--ca-green)] hover:underline font-medium" target="_blank" rel="noopener">公開URL</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

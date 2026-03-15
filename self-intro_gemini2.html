@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naoki Takano | Professional Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #b45309; /* Deep Gold */
+      --glass: rgba(255, 255, 255, 0.03);
+    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--primary);
+      color: #e2e8f0;
+    }
+    .serif {
+      font-family: 'Playfair Display', 'Noto Serif JP', serif;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border {
+      border: 1px solid rgba(180, 83, 9, 0.3);
+    }
+    .premium-card {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(180, 83, 9, 0.5), transparent);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <div class="fixed inset-0 overflow-hidden pointer-events-none opacity-20">
+    <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-amber-900 rounded-full blur-[120px]"></div>
+    <div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-blue-900 rounded-full blur-[120px]"></div>
+  </div>
+
+  <main class="relative z-10 max-w-5xl mx-auto px-8 py-20 md:py-32">
+    
+    <header class="text-center mb-24">
+      <div class="flex justify-center mb-8">
+        <div class="h-12 w-px bg-gradient-to-b from-transparent to-amber-600"></div>
+      </div>
+      <h1 class="serif text-5xl md:text-8xl font-black mb-8 tracking-tighter">
+        <span class="gold-gradient">高野 直樹</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-400 font-light tracking-widest uppercase">
+        Automotive Electrical Sales Professional
+      </p>
+      <div class="mt-12 text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        埼玉県在住 ── 自動車電装業界の営業として、<br class="hidden md:block">
+        アナログな現場をAIで革新する挑戦を続けています。
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
+      <div class="premium-card p-10 rounded-lg text-center gold-border">
+        <i data-lucide="map-pin" class="w-8 h-8 mx-auto mb-6 text-amber-600"></i>
+        <div class="text-[10px] tracking-[0.2em] text-amber-500/60 mb-2 uppercase">Location</div>
+        <div class="serif text-xl font-bold">埼玉・豊島区出身</div>
+        <div class="text-xs text-slate-500 mt-2">Saitama / Tokyo</div>
+      </div>
+      <div class="premium-card p-10 rounded-lg text-center gold-border">
+        <i data-lucide="users" class="w-8 h-8 mx-auto mb-6 text-amber-600"></i>
+        <div class="text-[10px] tracking-[0.2em] text-amber-500/60 mb-2 uppercase">Family</div>
+        <div class="serif text-xl font-bold">一児の父</div>
+        <div class="text-xs text-slate-500 mt-2">Father of 9yo daughter</div>
+      </div>
+      <div class="premium-card p-10 rounded-lg text-center gold-border">
+        <i data-lucide="award" class="w-8 h-8 mx-auto mb-6 text-amber-600"></i>
+        <div class="text-[10px] tracking-[0.2em] text-amber-500/60 mb-2 uppercase">Experience</div>
+        <div class="serif text-xl font-bold">新卒から一筋</div>
+        <div class="text-xs text-slate-500 mt-2">Lifetime Career</div>
+      </div>
+    </div>
+
+    <div class="space-y-32">
+      
+      <section class="grid md:grid-cols-12 gap-12 items-start">
+        <div class="md:col-span-4">
+          <h2 class="serif text-3xl font-black mb-4">01. 人物紹介</h2>
+          <div class="w-12 h-1 bg-amber-600"></div>
+        </div>
+        <div class="md:col-span-8 text-slate-300 leading-loose text-lg">
+          <p class="mb-8">
+            新卒以来、現在の会社において自動車電装部品の卸売販売に従事しております。
+            営業部門の主軸として、国内各社との信頼関係を築き上げてきました。
+          </p>
+          <div class="flex gap-4">
+            <span class="px-5 py-2 rounded-full border border-slate-700 text-xs text-slate-400">電装部品営業</span>
+            <span class="px-5 py-2 rounded-full border border-slate-700 text-xs text-slate-400">卸売販売</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section class="grid md:grid-cols-12 gap-12 items-start">
+        <div class="md:col-span-4 md:order-last">
+          <h2 class="serif text-3xl font-black mb-4">02. 背景</h2>
+          <div class="w-12 h-1 bg-amber-600 ml-auto"></div>
+        </div>
+        <div class="md:col-span-8 text-slate-300 leading-loose text-lg">
+          <p class="mb-8 italic text-slate-400">
+            「兄の背中を追い、プロミュージシャンの道を志したあの日」
+          </p>
+          <p class="mb-8">
+            一時はプロを目前にしながらも、その道を断念。しかし、その時に培った情熱は、次なる興味の対象であった「自動車」というフィールドへと昇華されました。
+          </p>
+        </div>
+      </section>
+
+      <section class="premium-card rounded-2xl overflow-hidden">
+        <div class="p-8 md:p-16 border-b border-white/5 bg-white/5">
+          <h2 class="serif text-3xl font-black mb-8 text-center">03. 業界の真実と課題</h2>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-amber-500 font-bold mb-4 flex items-center gap-2 uppercase tracking-tighter">
+                <i data-lucide="car" class="w-4 h-4"></i> The Market
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                カーナビからトヨタOEM製造まで、電気に関わるあらゆる部品を網羅。極めてニッチでありながら、自動車社会の根幹を支える誇りある業界です。
+              </p>
+            </div>
+            <div>
+              <h3 class="text-rose-500 font-bold mb-4 flex items-center gap-2 uppercase tracking-tighter">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i> Critical Issue
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                未だにFAXが主流という根深いアナログ文化。この非効率が若者の流出を招き、人材不足という深刻な歪みを生んでいます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-center py-20 border-y border-white/5">
+        <div class="inline-block p-4 rounded-full bg-amber-600/10 mb-8">
+          <i data-lucide="graduation-cap" class="w-10 h-10 text-amber-500"></i>
+        </div>
+        <h2 class="serif text-4xl md:text-5xl font-black mb-10 gold-gradient">AIの力で、業界に風穴を。</h2>
+        <p class="max-w-3xl mx-auto text-slate-300 text-xl leading-relaxed mb-12">
+          このスクールでの学びを通じ、アナログな業界風土を打破したい。
+          AIによる効率化で人材の欠如を補い、自動車電装業界の未来を切り拓くことが私の決意です。
+        </p>
+        <div class="serif text-2xl font-bold tracking-widest">
+          どうぞよろしくお願いします。
+        </div>
+      </section>
+    </div>
+
+    <footer class="mt-32 pt-16 border-t border-white/5 text-center text-slate-600">
+      <p class="text-xs tracking-widest uppercase mb-4">Presented by Naoki Takano | Since 1976</p>
+      <p class="text-[10px]">AI-Driven School Portfolio Builder</p>
+      <p class="text-xs mt-3"><a href="index.html" class="text-cyan-400 hover:underline">ポータルに戻る</a>　|　<a href="https://diagram-self-intro.surge.sh" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">公開URL</a></p>
+    </footer>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

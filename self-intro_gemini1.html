@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naoki Takano - Professional Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-hover {
+      transition: all 0.3s ease;
+    }
+    .section-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+    }
+    .timeline-dot::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background: #3b82f6;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px #3b82f6;
+    }
+  </style>
+</head>
+<body class="selection:bg-blue-100">
+
+  <div class="h-2 bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600"></div>
+
+  <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    
+    <header class="text-center mb-20">
+      <div class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 rounded-full">
+        Introduction
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tight">
+        <span class="gradient-text">高野直樹</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+        自動車電装の<span class="font-bold text-slate-800 underline decoration-blue-500 decoration-4 underline-offset-4">営業</span>・埼玉在住の一児の父
+      </p>
+    </header>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+      <div class="glass-card p-6 rounded-3xl text-center section-hover">
+        <i data-lucide="map-pin" class="w-6 h-6 mx-auto mb-3 text-blue-500"></i>
+        <div class="text-xs text-slate-400 mb-1">出身</div>
+        <div class="font-bold">東京・豊島区</div>
+      </div>
+      <div class="glass-card p-6 rounded-3xl text-center section-hover">
+        <i data-lucide="home" class="w-6 h-6 mx-auto mb-3 text-emerald-500"></i>
+        <div class="text-xs text-slate-400 mb-1">現在</div>
+        <div class="font-bold">埼玉在住</div>
+      </div>
+      <div class="glass-card p-6 rounded-3xl text-center section-hover">
+        <i data-lucide="heart" class="w-6 h-6 mx-auto mb-3 text-rose-500"></i>
+        <div class="text-xs text-slate-400 mb-1">家族</div>
+        <div class="font-bold">9歳の娘の父</div>
+      </div>
+      <div class="glass-card p-6 rounded-3xl text-center section-hover border-blue-100 bg-blue-50/30">
+        <i data-lucide="briefcase" class="w-6 h-6 mx-auto mb-3 text-blue-600"></i>
+        <div class="text-xs text-slate-400 mb-1">仕事</div>
+        <div class="font-bold text-blue-600">電装部品営業</div>
+      </div>
+    </div>
+
+    <div class="space-y-12">
+      
+      <section class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100 section-hover">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="p-3 bg-blue-600 rounded-2xl shadow-lg shadow-blue-200">
+            <i data-lucide="user" class="w-6 h-6 text-white"></i>
+          </div>
+          <h2 class="text-2xl font-black text-slate-800">人物紹介</h2>
+        </div>
+        <div class="prose prose-slate lg:prose-lg max-w-none">
+          <p class="mb-6">新卒から今の会社一筋で働いています。国内の会社に自動車の電装部品の卸売販売をしていて、営業部門に所属しています。</p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-slate-50 text-slate-600 rounded-xl text-sm font-medium border border-slate-100">#新卒から一筋</span>
+            <span class="px-4 py-2 bg-slate-50 text-slate-600 rounded-xl text-sm font-medium border border-slate-100">#電装部品の卸売</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-900 p-8 md:p-12 rounded-[2.5rem] text-white section-hover overflow-hidden relative">
+        <div class="absolute top-0 right-0 p-12 opacity-10">
+          <i data-lucide="music" class="w-64 h-64"></i>
+        </div>
+        <div class="flex items-center gap-4 mb-8 relative">
+          <div class="p-3 bg-indigo-500 rounded-2xl shadow-lg shadow-indigo-900">
+            <i data-lucide="music-4" class="w-6 h-6 text-white"></i>
+          </div>
+          <h2 class="text-2xl font-black">就職までのストーリー</h2>
+        </div>
+        <div class="relative z-10">
+          <p class="text-slate-300 mb-8 leading-relaxed">
+            実はプロミュージシャンを目指して活動をしていました。兄の背中を追いかけて後一歩のところまで行きましたが、力不足や様々な要因が重なり断念。その後、元々興味があった車の世界へ飛び込み、今の会社に出会いました。
+          </p>
+          <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="flex-1 text-center p-6 rounded-2xl bg-white/5 border border-white/10">
+              <div class="text-indigo-400 font-bold mb-2">Music</div>
+              <div class="text-sm text-slate-400">プロを目指した日々</div>
+            </div>
+            <i data-lucide="arrow-right" class="w-6 h-6 text-slate-600 hidden md:block"></i>
+            <div class="flex-1 text-center p-6 rounded-2xl bg-white/5 border border-white/10">
+              <div class="text-amber-400 font-bold mb-2">Car</div>
+              <div class="text-sm text-slate-400">車への興味</div>
+            </div>
+            <i data-lucide="arrow-right" class="w-6 h-6 text-slate-600 hidden md:block"></i>
+            <div class="flex-1 text-center p-6 rounded-2xl bg-blue-500/20 border border-blue-500/30">
+              <div class="text-blue-400 font-bold mb-2">Present</div>
+              <div class="text-sm text-slate-400">現在のキャリアへ</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <section class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 section-hover">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="p-3 bg-cyan-500 rounded-2xl">
+              <i data-lucide="car" class="w-6 h-6 text-white"></i>
+            </div>
+            <h2 class="text-xl font-black text-slate-800">電装業界とは</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            カーナビ、ドラレコからトヨタOEM商品の製造まで。電気に関わる商品はすべて対象となる、非常にニッチな世界です。
+          </p>
+        </section>
+
+        <section class="bg-rose-50 p-8 rounded-[2.5rem] border border-rose-100 section-hover">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="p-3 bg-rose-500 rounded-2xl">
+              <i data-lucide="alert-circle" class="w-6 h-6 text-white"></i>
+            </div>
+            <h2 class="text-xl font-black text-rose-900">業界の課題</h2>
+          </div>
+          <p class="text-rose-800 text-sm leading-relaxed">
+            いまだにFAXが主流というアナログな風土。DXとは程遠い環境が、若者の離職や人材不足を加速させています。
+          </p>
+        </section>
+      </div>
+
+      <section class="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 md:p-12 rounded-[2.5rem] text-white shadow-xl shadow-blue-200 section-hover">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="p-3 bg-white/20 backdrop-blur-md rounded-2xl">
+            <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
+          </div>
+          <h2 class="text-2xl font-black">AIスクールで目指す未来</h2>
+        </div>
+        <p class="text-blue-50 text-lg mb-10 leading-relaxed">
+          AIの活用に抵抗があるこの業界に「風穴」を開けたい。効率化によって人材不足を解消し、次世代が働きやすい環境を作ることが私の使命です。
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl">
+            <h4 class="font-bold mb-2 flex items-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i> AIによる効率化
+            </h4>
+            <p class="text-xs text-blue-100">アナログな慣習を打破し、最先端の技術を導入。</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl">
+            <h4 class="font-bold mb-2 flex items-center gap-2">
+              <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i> 人材不足の解消
+            </h4>
+            <p class="text-xs text-blue-100">労働負荷を軽減し、魅力的な業界へアップデート。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="mt-20 text-center">
+      <p class="text-3xl font-black text-slate-800 mb-4">どうぞよろしくお願いします！</p>
+      <p class="text-slate-400 text-xs tracking-widest uppercase">© 2026 NAOKI TAKANO / AI-Driven School</p>
+      <p class="text-xs mt-3"><a href="index.html" class="text-blue-600 hover:underline">ポータルに戻る</a>　|　<a href="https://diagram-self-intro.surge.sh" class="text-blue-600 hover:underline" target="_blank" rel="noopener">公開URL</a></p>
+    </footer>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
