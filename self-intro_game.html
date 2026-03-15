@@ -26,6 +26,35 @@
       image-rendering: pixelated;
       image-rendering: crisp-edges;
     }
+    /* 宇宙の星（ランダムな白い点） */
+    .stars-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      background: #fff;
+    }
+    /* 銀河っぽい密集帯 */
+    .galaxy-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .galaxy {
+      position: fixed;
+      width: 180px;
+      height: 100px;
+    }
+    .galaxy-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: #fff;
+    }
     .font-pixel { font-family: 'Press Start 2P', cursive; }
     /* ドット背景 */
     .bg-dots {
@@ -66,6 +95,8 @@
       margin-top: 10px;
     }
     .hover-pixel:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 var(--border); }
+    .score-trigger { cursor: pointer; }
+    .score-trigger:active { opacity: 0.9; }
     /* インベーダー風ドット（5x5 ミニマル） */
     .invader-dots {
       display: grid;
@@ -85,20 +116,41 @@
       .invader-dots { width: 64px; height: 64px; gap: 3px; }
       .invader-dots span { width: 10px; height: 10px; }
     }
+    /* 上から落ちるランダムドット */
+    .falling-dots-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .falling-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: -20px;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      to { transform: translateY(100vh); }
+    }
   </style>
 </head>
-<body class="bg-dots min-h-screen">
+<body class="min-h-screen relative">
+  <div id="starsLayer" class="stars-layer" aria-hidden="true"></div>
+  <div id="galaxyLayer" class="galaxy-layer" aria-hidden="true"></div>
+  <div id="fallingDots" class="falling-dots-layer" aria-hidden="true"></div>
 
   <!-- === アーケード風 上部スコアバー === -->
-  <div class="border-b-2 border-[var(--border)] bg-[var(--bg-panel)] py-2 px-4">
+  <div class="border-b-2 border-[var(--border)] bg-[var(--bg-panel)] py-2 px-4 relative z-10">
     <div class="max-w-4xl mx-auto flex justify-between items-center font-pixel text-[8px] md:text-[10px]">
       <div class="text-[var(--accent-cyan)]">
         <div>SCORE&lt;1&gt;</div>
-        <div class="text-white">00000</div>
+        <div id="scoreDisplay" class="text-white">00000</div>
       </div>
       <div class="text-[var(--accent-amber)]">
         <div>HI-SCORE</div>
-        <div class="text-[var(--accent-amber)]">00100</div>
+        <div id="hiScoreDisplay" class="text-[var(--accent-amber)]">00100</div>
       </div>
       <div class="text-[var(--accent-pink)]">
         <div>SCORE&lt;2&gt;</div>
@@ -107,7 +159,7 @@
     </div>
   </div>
 
-  <main class="max-w-4xl mx-auto px-6 py-10 md:py-14">
+  <main class="max-w-4xl mx-auto px-6 py-10 md:py-14 relative z-10">
 
     <!-- === TITLE SCREEN（インベーダー風ドット付き） === -->
     <header class="text-center mb-12 md:mb-16">
@@ -139,28 +191,28 @@
     <section class="pixel-border bg-[var(--bg-panel)] p-6 md:p-8 mb-10">
       <h2 class="font-pixel text-sm text-[var(--accent-green)] mb-6">[ STATUS ]</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
-        <div class="pixel-border-amber p-5 md:p-6 bg-[var(--bg-dark)] hover-pixel transition-all cursor-default">
+        <div class="score-trigger pixel-border-amber p-5 md:p-6 bg-[var(--bg-dark)] hover-pixel transition-all">
           <div class="flex items-center gap-3 mb-2">
             <span class="pixel-dot-sm text-[var(--accent-amber)]"></span>
             <span class="font-pixel text-[10px] md:text-xs text-[var(--accent-amber)]">出身</span>
           </div>
           <p class="text-base md:text-lg font-bold text-[var(--accent-amber)]">東京・豊島区</p>
         </div>
-        <div class="pixel-border-green p-5 md:p-6 bg-[var(--bg-dark)] hover-pixel transition-all cursor-default">
+        <div class="score-trigger pixel-border-green p-5 md:p-6 bg-[var(--bg-dark)] hover-pixel transition-all">
           <div class="flex items-center gap-3 mb-2">
             <span class="pixel-dot-sm text-[var(--accent-green)]"></span>
             <span class="font-pixel text-[10px] md:text-xs text-[var(--accent-green)]">現在</span>
           </div>
           <p class="text-base md:text-lg font-bold text-[var(--accent-green)]">埼玉在住</p>
         </div>
-        <div class="pixel-border-pink p-5 md:p-6 bg-[var(--bg-dark)] hover-pixel transition-all cursor-default">
+        <div class="score-trigger pixel-border-pink p-5 md:p-6 bg-[var(--bg-dark)] hover-pixel transition-all">
           <div class="flex items-center gap-3 mb-2">
             <span class="pixel-dot-sm text-[var(--accent-pink)]"></span>
             <span class="font-pixel text-[10px] md:text-xs text-[var(--accent-pink)]">家族</span>
           </div>
           <p class="text-base md:text-lg font-bold text-[var(--accent-pink)]">9歳の娘の父</p>
         </div>
-        <div class="pixel-border-cyan p-5 md:p-6 bg-[var(--bg-dark)] hover-pixel transition-all cursor-default">
+        <div class="score-trigger pixel-border-cyan p-5 md:p-6 bg-[var(--bg-dark)] hover-pixel transition-all">
           <div class="flex items-center gap-3 mb-2">
             <span class="pixel-dot-sm text-[var(--accent-cyan)]"></span>
             <span class="font-pixel text-[10px] md:text-xs text-[var(--accent-cyan)]">仕事</span>
@@ -171,7 +223,7 @@
     </section>
 
     <!-- === STAGE 1 人物紹介 === -->
-    <section class="pixel-border-green bg-[var(--bg-panel)] p-6 md:p-8 mb-8">
+    <section class="score-trigger pixel-border-green bg-[var(--bg-panel)] p-6 md:p-8 mb-8">
       <h2 class="font-pixel text-xs md:text-sm text-[var(--accent-green)] mb-5">[ STAGE 1 — 人物紹介 ]</h2>
       <p class="text-base md:text-lg leading-relaxed text-[var(--text)] mb-6">新卒から今の会社一筋で働いています。国内の会社に自動車の電装部品の卸売販売をしていて、営業部門に所属しています。</p>
       <div class="flex flex-wrap gap-3">
@@ -181,7 +233,7 @@
     </section>
 
     <!-- === STAGE 2 就職までのストーリー === -->
-    <section class="pixel-border-pink bg-[var(--bg-panel)] p-6 md:p-8 mb-8">
+    <section class="score-trigger pixel-border-pink bg-[var(--bg-panel)] p-6 md:p-8 mb-8">
       <h2 class="font-pixel text-xs md:text-sm text-[var(--accent-pink)] mb-5">[ STAGE 2 — 就職までのストーリー ]</h2>
       <p class="text-base md:text-lg leading-relaxed text-[var(--text)] mb-8">実はプロミュージシャンを目指して活動をしていました。兄の背中を追いかけて後一歩のところまで行きましたが、力不足や様々な要因が重なり断念。その後、元々興味があった車の世界へ飛び込み、今の会社に出会いました。</p>
       <div class="grid grid-cols-3 gap-4 md:gap-6">
@@ -211,11 +263,11 @@
 
     <!-- === STAGE 3 電装・課題（2カラム） === -->
     <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-8">
-      <section class="pixel-border-amber bg-[var(--bg-panel)] p-6 md:p-8">
+      <section class="score-trigger pixel-border-amber bg-[var(--bg-panel)] p-6 md:p-8">
         <h2 class="font-pixel text-sm md:text-base text-[var(--accent-amber)] mb-5">[ 電装業界とは ]</h2>
         <p class="text-lg md:text-xl leading-relaxed text-[var(--text)]">カーナビ、ドラレコからトヨタOEM商品の製造まで。電気に関わる商品はすべて対象となる、非常にニッチな世界です。</p>
       </section>
-      <section class="pixel-border bg-[var(--bg-panel)] p-6 md:p-8 border-[var(--accent-pink)]">
+      <section class="score-trigger pixel-border bg-[var(--bg-panel)] p-6 md:p-8 border-[var(--accent-pink)]">
         <h2 class="font-pixel text-sm md:text-base text-[var(--accent-pink)] mb-5">[ 業界の課題 ]</h2>
         <p class="text-lg md:text-xl leading-relaxed text-[var(--text)]">いまだにFAXが主流というアナログな風土。DXとは程遠い環境が、若者の離職や人材不足を加速させています。</p>
       </section>
@@ -226,14 +278,14 @@
       <h2 class="font-pixel text-xs md:text-sm text-[var(--accent-cyan)] mb-5">[ STAGE 4 — AIスクールで目指す未来 ]</h2>
       <p class="text-base md:text-lg leading-relaxed text-[var(--text)] mb-8">AIの活用に抵抗があるこの業界に「風穴」を開けたい。効率化によって人材不足を解消し、次世代が働きやすい環境を作ることが私の使命です。</p>
       <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
-        <div class="pixel-border-amber p-6 md:p-8 bg-[var(--bg-dark)]">
+        <div class="score-trigger pixel-border-amber p-6 md:p-8 bg-[var(--bg-dark)]">
           <div class="flex items-center gap-3 mb-3">
             <span class="pixel-dot text-[var(--accent-amber)]"></span>
             <span class="font-pixel text-sm md:text-base text-[var(--accent-amber)]">AIによる効率化</span>
           </div>
           <p class="text-sm md:text-base text-[var(--text-dim)]">アナログな慣習を打破し、最先端の技術を導入。</p>
         </div>
-        <div class="pixel-border-green p-6 md:p-8 bg-[var(--bg-dark)]">
+        <div class="score-trigger pixel-border-green p-6 md:p-8 bg-[var(--bg-dark)]">
           <div class="flex items-center gap-3 mb-3">
             <span class="pixel-dot text-[var(--accent-green)]"></span>
             <span class="font-pixel text-sm md:text-base text-[var(--accent-green)]">人材不足の解消</span>
@@ -259,7 +311,7 @@
   </main>
 
   <!-- === アーケード風 下部クレジット・残機 === -->
-  <div class="border-t-2 border-[var(--border)] bg-[var(--bg-panel)] py-2 px-4 mt-auto">
+  <div class="border-t-2 border-[var(--border)] bg-[var(--bg-panel)] py-2 px-4 mt-auto relative z-10">
     <div class="max-w-4xl mx-auto flex justify-between items-center font-pixel text-[8px] md:text-[10px]">
       <div class="flex items-center gap-2 text-white">
         <span>1UP</span>
@@ -273,5 +325,92 @@
     </div>
   </div>
 
+  <script>
+    (function () {
+      var scoreEl = document.getElementById('scoreDisplay');
+      var hiScoreEl = document.getElementById('hiScoreDisplay');
+      var score = 0;
+      var hiScore = 100;
+      var addPerClick = 10;
+
+      function pad5(n) { return String(Math.min(99999, n)).padStart(5, '0'); }
+
+      function addScore() {
+        score += addPerClick;
+        if (score > hiScore) hiScore = score;
+        scoreEl.textContent = pad5(score);
+        hiScoreEl.textContent = pad5(hiScore);
+      }
+
+      document.querySelectorAll('.score-trigger').forEach(function (el) {
+        el.addEventListener('click', addScore);
+      });
+
+      // 宇宙の星（ランダムな白い点）
+      var starsLayer = document.getElementById('starsLayer');
+      var starCount = 120;
+      for (var s = 0; s < starCount; s++) {
+        var star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        var size = Math.random() < 0.2 ? 2 : 1;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.opacity = 0.4 + Math.random() * 0.6;
+        starsLayer.appendChild(star);
+      }
+
+      // 銀河っぽい密集帯（楕円状にドットを密集）
+      var galaxyLayer = document.getElementById('galaxyLayer');
+      var galaxyPositions = [
+        { left: '8%',  top: '18%', w: 160, h: 80 },
+        { left: '72%', top: '65%', w: 200, h: 90 },
+        { left: '45%', top: '82%', w: 140, h: 70 }
+      ];
+      galaxyPositions.forEach(function (pos) {
+        var gal = document.createElement('div');
+        gal.className = 'galaxy';
+        gal.style.left = pos.left;
+        gal.style.top = pos.top;
+        gal.style.width = pos.w + 'px';
+        gal.style.height = pos.h + 'px';
+        var cx = pos.w / 2;
+        var cy = pos.h / 2;
+        var n = 90 + Math.floor(Math.random() * 40);
+        for (var g = 0; g < n; g++) {
+          var angle = Math.random() * Math.PI * 2;
+          var r = Math.pow(Math.random(), 0.6) * Math.min(pos.w, pos.h) * 0.45;
+          var x = cx + Math.cos(angle) * r * (1.2 + Math.random() * 0.4);
+          var y = cy + Math.sin(angle) * r * (0.5 + Math.random() * 0.5);
+          var dot = document.createElement('div');
+          dot.className = 'galaxy-dot';
+          var sz = Math.random() < 0.15 ? 2 : 1;
+          dot.style.width = sz + 'px';
+          dot.style.height = sz + 'px';
+          dot.style.left = (cx + x - sz / 2) + 'px';
+          dot.style.top = (cy + y - sz / 2) + 'px';
+          dot.style.opacity = 0.3 + Math.random() * 0.6;
+          dot.style.background = Math.random() < 0.2 ? 'rgba(200,220,255,0.9)' : '#fff';
+          gal.appendChild(dot);
+        }
+        galaxyLayer.appendChild(gal);
+      });
+
+      // 上から落ちるランダムな色のドット
+      var colors = ['#00e676', '#18ffff', '#ff4081', '#ffab00'];
+      var layer = document.getElementById('fallingDots');
+      var count = 22;
+      for (var i = 0; i < count; i++) {
+        var dot = document.createElement('div');
+        dot.className = 'falling-dot';
+        dot.style.left = Math.random() * 100 + '%';
+        dot.style.animationDuration = (4 + Math.random() * 6) + 's';
+        dot.style.animationDelay = -(Math.random() * 8) + 's';
+        dot.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        layer.appendChild(dot);
+      }
+    })();
+  </script>
 </body>
 </html>

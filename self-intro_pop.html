@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高野直樹 - Self Introduction | pop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pop-yellow: #fef08a;
+      --pop-yellow-dark: #facc15;
+      --pop-pink: #f9a8d4;
+      --pop-green: #86efac;
+      --pop-purple: #c4b5fd;
+      --pop-blue: #93c5fd;
+      --pop-orange: #fdba74;
+      --pop-black: #1c1917;
+    }
+    body { font-family: 'Noto Sans JP', sans-serif; }
+    .pop-grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+    .pop-bubble {
+      border: 2px solid var(--pop-black);
+      border-radius: 9999px;
+      box-shadow: 3px 3px 0 var(--pop-black);
+    }
+    .pop-bubble-alt {
+      border: 2px solid var(--pop-black);
+      border-radius: 1.5rem;
+      box-shadow: 3px 3px 0 var(--pop-black);
+    }
+    .pop-wave {
+      height: 8px;
+      background: repeating-linear-gradient(90deg, var(--pop-green) 0 4px, var(--pop-purple) 4px 8px);
+      border-radius: 0 0 50% 50% / 0 0 4px 4px;
+    }
+    .pop-title-letter { font-weight: 900; text-shadow: 2px 2px 0 var(--pop-black); }
+    .pop-nav-btn {
+      background: #fff;
+      border: 2px solid var(--pop-black);
+      border-radius: 9999px;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--pop-black);
+    }
+    .pop-nav-btn:hover { background: var(--pop-black); color: #fff; }
+    .pop-banner {
+      transform: rotate(-1deg);
+      border: 2px solid var(--pop-black);
+      box-shadow: 4px 4px 0 var(--pop-black);
+    }
+  </style>
+</head>
+<body class="bg-[var(--pop-yellow)] text-[var(--pop-black)] antialiased pop-grain min-h-screen">
+
+  <!-- Nav: ポップ風ラウンドボタン -->
+  <nav class="border-b-2 border-[var(--pop-black)] bg-white/80 backdrop-blur-sm sticky top-0 z-10">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-2">
+      <span class="text-sm font-bold">高野直樹 自己紹介</span>
+      <div class="flex flex-wrap gap-2">
+        <a href="index.html" class="pop-nav-btn">Portal</a>
+        <a href="https://diagram-self-intro.surge.sh" class="pop-nav-btn" target="_blank" rel="noopener">URL</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 py-10 md:py-16">
+
+    <!-- HERO: 大きなタイトル + 英語サブ -->
+    <header class="text-center mb-12 md:mb-20">
+      <p class="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--pop-black)]/70 mb-4">Self Introduction</p>
+      <h1 class="text-4xl md:text-6xl font-black mb-2 tracking-tight">
+        <span class="pop-title-letter text-[var(--pop-orange)]">高</span><span class="pop-title-letter text-[var(--pop-pink)]">野</span><span class="pop-title-letter text-[var(--pop-green)]">直</span><span class="pop-title-letter text-[var(--pop-blue)]">樹</span>
+      </h1>
+      <p class="text-lg md:text-xl font-bold uppercase tracking-wider text-[var(--pop-black)] mt-2">Automotive Sales / Saitama / Father of One</p>
+    </header>
+
+    <!-- ひとこと: 吹き出し風 -->
+    <div class="flex flex-wrap justify-center gap-4 mb-16">
+      <div class="pop-bubble-alt bg-white px-6 py-4 max-w-md">
+        <p class="text-lg md:text-xl font-bold text-center">自動車電装の<span class="bg-[var(--pop-yellow-dark)] px-1 rounded">営業</span>・埼玉在住の一児の父</p>
+      </div>
+      <div class="pop-bubble bg-[var(--pop-pink)] px-4 py-2 inline-flex items-center">
+        <span class="text-sm font-bold">新卒から今の会社一筋ダ！</span>
+      </div>
+    </div>
+
+    <div class="pop-wave my-12"></div>
+
+    <!-- STATS: 4つを吹き出し・カラフルに -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+      <div class="pop-bubble-alt bg-white p-4 text-center">
+        <p class="text-xs font-bold uppercase text-[var(--pop-black)]/60 mb-1">出身</p>
+        <p class="font-bold">東京・豊島区</p>
+      </div>
+      <div class="pop-bubble-alt bg-[var(--pop-green)]/80 p-4 text-center">
+        <p class="text-xs font-bold uppercase text-[var(--pop-black)]/60 mb-1">現在</p>
+        <p class="font-bold">埼玉在住</p>
+      </div>
+      <div class="pop-bubble-alt bg-[var(--pop-purple)]/80 p-4 text-center">
+        <p class="text-xs font-bold uppercase text-[var(--pop-black)]/60 mb-1">家族</p>
+        <p class="font-bold">9歳の娘の父</p>
+      </div>
+      <div class="pop-bubble-alt bg-[var(--pop-blue)]/80 p-4 text-center">
+        <p class="text-xs font-bold uppercase text-[var(--pop-black)]/60 mb-1">仕事</p>
+        <p class="font-bold">電装部品営業</p>
+      </div>
+    </div>
+
+    <!-- 人物紹介 -->
+    <section class="mb-12">
+      <div class="pop-banner bg-[var(--pop-green)] p-6 md:p-8 rounded-2xl mb-6">
+        <h2 class="text-xl md:text-2xl font-black mb-4">人物紹介</h2>
+        <p class="leading-relaxed mb-4">新卒から今の会社一筋で働いています。国内の会社に自動車の電装部品の卸売販売をしていて、営業部門に所属しています。</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="pop-bubble bg-white px-3 py-1 text-sm font-bold">#新卒から一筋</span>
+          <span class="pop-bubble bg-white px-3 py-1 text-sm font-bold">#電装部品の卸売</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 就職までのストーリー -->
+    <section class="mb-12">
+      <div class="pop-banner bg-[var(--pop-purple)] p-6 md:p-8 rounded-2xl mb-6">
+        <h2 class="text-xl md:text-2xl font-black mb-4">就職までのストーリー</h2>
+        <p class="leading-relaxed mb-6">実はプロミュージシャンを目指して活動をしていました。兄の背中を追いかけて後一歩のところまで行きましたが、力不足や様々な要因が重なり断念。その後、元々興味があった車の世界へ飛び込み、今の会社に出会いました。</p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <div class="pop-bubble-alt bg-white px-4 py-2 text-center">
+            <span class="font-bold text-[var(--pop-pink)]">Music</span>
+            <span class="text-xs block">プロを目指した日々</span>
+          </div>
+          <span class="font-black text-lg">→</span>
+          <div class="pop-bubble-alt bg-white px-4 py-2 text-center">
+            <span class="font-bold text-[var(--pop-orange)]">Car</span>
+            <span class="text-xs block">車への興味</span>
+          </div>
+          <span class="font-black text-lg">→</span>
+          <div class="pop-bubble-alt bg-[var(--pop-yellow-dark)] px-4 py-2 text-center">
+            <span class="font-bold">NOW</span>
+            <span class="text-xs block">現在のキャリアへ</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 電装業界・業界の課題: 2カラム -->
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="pop-banner bg-[var(--pop-orange)] p-6 rounded-2xl">
+        <h2 class="text-lg font-black mb-3">電装業界とは</h2>
+        <p class="text-sm leading-relaxed">カーナビ、ドラレコからトヨタOEM商品の製造まで。電気に関わる商品はすべて対象となる、非常にニッチな世界です。</p>
+      </div>
+      <div class="pop-banner bg-[var(--pop-pink)] p-6 rounded-2xl">
+        <h2 class="text-lg font-black mb-3">業界の課題</h2>
+        <p class="text-sm leading-relaxed">いまだにFAXが主流というアナログな風土。DXとは程遠い環境が、若者の離職や人材不足を加速させています。</p>
+      </div>
+    </div>
+
+    <!-- AIスクールで目指す未来 -->
+    <section class="mb-16">
+      <div class="pop-banner bg-[var(--pop-blue)] p-6 md:p-8 rounded-2xl">
+        <h2 class="text-xl md:text-2xl font-black mb-4">AIスクールで目指す未来</h2>
+        <p class="leading-relaxed mb-6">AIの活用に抵抗があるこの業界に「風穴」を開けたい。効率化によって人材不足を解消し、次世代が働きやすい環境を作ることが私の使命です。</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="pop-bubble-alt bg-white px-4 py-3">
+            <span class="font-bold block mb-1">AIによる効率化</span>
+            <span class="text-xs">アナログな慣習を打破し、最先端の技術を導入</span>
+          </div>
+          <div class="pop-bubble-alt bg-white px-4 py-3">
+            <span class="font-bold block mb-1">人材不足の解消</span>
+            <span class="text-xs">労働負荷を軽減し、魅力的な業界へ</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="pop-wave my-12"></div>
+
+    <!-- 締め -->
+    <div class="text-center py-12">
+      <p class="text-2xl md:text-3xl font-black pop-bubble-alt bg-white inline-block px-8 py-4">どうぞよろしくお願いします！</p>
+    </div>
+
+  </main>
+
+  <footer class="border-t-2 border-[var(--pop-black)] bg-white/90 py-6">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-[var(--pop-black)]/70">
+      <p>© 2026 NAOKI TAKANO / AI-Driven School</p>
+      <p class="mt-2">
+        <a href="index.html" class="pop-nav-btn inline-block">ポータルに戻る</a>
+        <span class="mx-2">|</span>
+        <a href="https://diagram-self-intro.surge.sh" class="pop-nav-btn inline-block" target="_blank" rel="noopener">公開URL</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
